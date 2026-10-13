@@ -11,12 +11,13 @@
     
     <style>
         :root {
-            --cokelat-jati: #5A3825;
-            --emas-klasik: #C6A15B;
-            --krem-gading: #F5EBDD;
-            --cokelat-gelap: #30231D;
-            --hijau-lumut: #596247;
-            --putih-melati: #FFFDF8;
+            --cokelat-jati: #3D2314;
+            --cokelat-tua: #26140A;
+            --emas-klasik: #D4AF37;
+            --emas-muda: #F3E5AB;
+            --krem-gading: #FBF7F0;
+            --krem-kartu: #F3EFE6;
+            --putih-melati: #FFFFFF;
         }
 
         * {
@@ -27,8 +28,8 @@
         }
 
         body {
-            background-color: var(--cokelat-gelap);
-            color: var(--cokelat-gelap);
+            background-color: var(--cokelat-tua);
+            color: var(--cokelat-jati);
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
@@ -42,14 +43,14 @@
             font-family: 'Great Vibes', cursive;
         }
 
-        /* ---------------- COVER OVERLAY DENGAN NUANSA GEBYOK & BATIK ---------------- */
+        /* ---------------- COVER OVERLAY & ORNAMEN JAWA ---------------- */
         #cover-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: var(--cokelat-jati);
+            background-color: var(--cokelat-tua);
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -58,46 +59,45 @@
             text-align: center;
             padding: 20px;
             transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            /* Pola Batik Halus Latar Belakang */
             background-image: 
-                radial-gradient(circle, rgba(198, 161, 91, 0.15) 1px, transparent 1px);
-            background-size: 30px 30px;
+                radial-gradient(circle, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
 
-        .gebyok-frame {
-            border: 4px double var(--emas-klasik);
-            padding: 45px 25px;
+        .javanese-frame {
+            border: 3px solid var(--emas-klasik);
+            padding: 40px 20px;
             max-width: 480px;
-            width: 90%;
+            width: 92%;
             position: relative;
             background-color: var(--krem-gading);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(198, 161, 91, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(212, 175, 55, 0.2);
+            background-image: linear-gradient(to bottom, rgba(251, 247, 240, 0.95), rgba(243, 239, 230, 0.95));
         }
 
-        /* Ornamen Sudut Keraton Klasik */
-        .gebyok-frame::before, .gebyok-frame::after {
-            content: "⚜ ❖ ⚜";
-            position: absolute;
-            font-size: 14px;
+        /* Ornamen Gunungan / Mahkota Atas */
+        .javanese-frame::before {
+            content: "▲ GUNUNGAN APASAL ▲";
+            display: block;
+            font-size: 10px;
+            letter-spacing: 4px;
             color: var(--emas-klasik);
-            letter-spacing: 5px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-bottom: 10px;
+            font-weight: 600;
         }
-        .gebyok-frame::before { top: 12px; }
-        .gebyok-frame::after { bottom: 12px; }
 
         .mempelai-title {
             font-size: 2.8rem;
             color: var(--cokelat-jati);
             font-weight: 700;
-            margin: 15px 0;
+            margin: 10px 0;
             line-height: 1.1;
-            text-shadow: 1px 1px 2px rgba(198, 161, 91, 0.2);
         }
 
         .btn-buka {
             background-color: var(--cokelat-jati);
-            color: var(--putih-melati);
+            color: var(--emas-muda);
             border: 2px solid var(--emas-klasik);
             padding: 12px 32px;
             font-size: 1.05rem;
@@ -105,13 +105,13 @@
             cursor: pointer;
             margin-top: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(90, 56, 37, 0.4);
+            box-shadow: 0 4px 15px rgba(61, 35, 20, 0.4);
             font-weight: 500;
         }
 
         .btn-buka:hover {
             background-color: var(--emas-klasik);
-            color: var(--cokelat-gelap);
+            color: var(--cokelat-tua);
             transform: scale(1.05);
         }
 
@@ -129,28 +129,28 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
             cursor: pointer;
             font-size: 0.85rem;
             animation: pulse-gold 2s infinite;
         }
 
         @keyframes pulse-gold {
-            0% { box-shadow: 0 0 0 0 rgba(198, 161, 91, 0.6); }
-            70% { box-shadow: 0 0 0 10px rgba(198, 161, 91, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(198, 161, 91, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-        /* ---------------- LAYOUT CONTAINER UTAMA ---------------- */
+        /* ---------------- CONTAINER UTAMA & ESTETIKA BATIK ---------------- */
         .container {
             max-width: 750px;
             margin: 0 auto;
             background-color: var(--krem-gading);
-            box-shadow: 0 0 50px rgba(0,0,0,0.6);
+            box-shadow: 0 0 60px rgba(0,0,0,0.8);
             position: relative;
             overflow: hidden;
-            border-left: 2px solid var(--emas-klasik);
-            border-right: 2px solid var(--emas-klasik);
+            border-left: 4px solid var(--emas-klasik);
+            border-right: 4px solid var(--emas-klasik);
         }
 
         section {
@@ -159,14 +159,14 @@
             position: relative;
         }
 
-        /* Batik Parang / Kawung Pembatas Elegan */
+        /* Ornamen Garis Batik Klasik */
         .ornament-divider {
-            margin: 30px auto;
+            margin: 25px auto;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--emas-klasik);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             gap: 15px;
         }
         .ornament-divider::before, .ornament-divider::after {
@@ -174,52 +174,53 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--emas-klasik), transparent);
             flex: 1;
-            max-width: 150px;
+            max-width: 140px;
         }
 
-        /* ---------------- KARTU GEBYOK TRADISIONAL ---------------- */
-        .gebyok-card-box {
-            background-color: var(--putih-melati);
+        /* KARTU ORNAMEN KERATON */
+        .javanese-card {
+            background-color: var(--krem-kartu);
             border: 2px solid var(--emas-klasik);
-            border-radius: 8px;
+            border-radius: 6px;
             padding: 35px 25px;
             margin: 25px 0;
             position: relative;
-            box-shadow: 0 8px 25px rgba(90, 56, 37, 0.08);
+            box-shadow: 0 8px 25px rgba(61, 35, 20, 0.08);
         }
 
-        .gebyok-card-box::before {
-            content: "❖";
+        .javanese-card::before {
+            content: "❖ ⚜ ❖";
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--putih-melati);
+            background: var(--krem-gading);
             padding: 0 15px;
             color: var(--emas-klasik);
-            font-size: 16px;
+            font-size: 12px;
+            letter-spacing: 3px;
         }
 
-        /* ---------------- PROFIL FOTO KERATON ---------------- */
+        /* FOTO PENGANTIN BINGKAI KLASIK */
         .profile-img-frame {
-            width: 200px;
-            height: 260px;
-            margin: 0 auto 25px;
-            border-radius: 100px 100px 10px 10px;
+            width: 190px;
+            height: 250px;
+            margin: 0 auto 20px;
+            border-radius: 95px 95px 8px 8px;
             border: 4px solid var(--emas-klasik);
-            padding: 6px;
+            padding: 5px;
             background-color: var(--cokelat-jati);
-            box-shadow: 0 10px 25px rgba(90, 56, 37, 0.25);
+            box-shadow: 0 10px 25px rgba(61, 35, 20, 0.3);
             overflow: hidden;
         }
         .profile-img-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 94px 94px 4px 4px;
+            border-radius: 90px 90px 4px 4px;
         }
 
-        /* ---------------- TIMELINE TRADISIONAL ---------------- */
+        /* TIMELINE WAYANG / PERJALANAN */
         .timeline {
             position: relative;
             max-width: 600px;
@@ -244,44 +245,44 @@
         .timeline-item.left { left: 0; text-align: right; }
         .timeline-item.right { left: 50%; text-align: left; }
         .timeline-item::after {
-            content: '⚜';
+            content: '❖';
             position: absolute;
-            width: 28px;
-            height: 28px;
-            right: -14px;
+            width: 26px;
+            height: 26px;
+            right: -13px;
             background-color: var(--cokelat-jati);
             color: var(--emas-klasik);
             top: 10px;
             border-radius: 50%;
             border: 2px solid var(--emas-klasik);
             z-index: 1;
-            font-size: 12px;
+            font-size: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .timeline-item.right::after { left: -14px; }
+        .timeline-item.right::after { left: -13px; }
 
-        /* ---------------- TOMBOL EMAS / HIJAU LUMUT ---------------- */
+        /* TOMBOL EMAS KHAS */
         .btn-gold {
             display: inline-block;
-            background-color: var(--hijau-lumut);
-            color: var(--putih-melati);
-            padding: 11px 25px;
+            background-color: var(--cokelat-jati);
+            color: var(--emas-muda);
+            padding: 11px 26px;
             text-decoration: none;
             border-radius: 30px;
             margin-top: 15px;
             font-size: 0.9rem;
             border: 1px solid var(--emas-klasik);
             transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(89, 98, 71, 0.3);
+            box-shadow: 0 4px 12px rgba(61, 35, 20, 0.25);
         }
         .btn-gold:hover {
-            background-color: var(--cokelat-jati);
-            color: var(--emas-klasik);
+            background-color: var(--emas-klasik);
+            color: var(--cokelat-tua);
         }
 
-        /* ---------------- HITUNG MUNDUR ---------------- */
+        /* HITUNG MUNDUR */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -290,12 +291,12 @@
         }
         .countdown-box {
             background-color: var(--cokelat-jati);
-            color: var(--emas-klasik);
+            color: var(--emas-muda);
             border: 1px solid var(--emas-klasik);
             padding: 12px 10px;
             border-radius: 8px;
             min-width: 75px;
-            box-shadow: 0 5px 15px rgba(90, 56, 37, 0.2);
+            box-shadow: 0 5px 15px rgba(61, 35, 20, 0.2);
         }
         .countdown-box span {
             display: block;
@@ -304,7 +305,7 @@
             color: var(--putih-melati);
         }
 
-        /* ---------------- GALERI FOTO ---------------- */
+        /* GALERI FOTO */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -330,7 +331,7 @@
             transform: scale(1.05);
         }
 
-        /* ---------------- BUKU TAMU & RSVP ---------------- */
+        /* BUKU TAMU & RSVP */
         .form-group {
             margin-bottom: 18px;
             text-align: left;
@@ -349,7 +350,7 @@
             border-radius: 6px;
             background-color: var(--putih-melati);
             font-family: inherit;
-            color: var(--cokelat-gelap);
+            color: var(--cokelat-tua);
         }
         .wishes-wall {
             max-height: 280px;
@@ -367,38 +368,37 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* ---------------- FOOTER PENUTUP ---------------- */
+        /* FOOTER */
         .footer-section {
-            background-color: var(--cokelat-jati);
+            background-color: var(--cokelat-tua);
             color: var(--krem-gading);
             border-top: 4px solid var(--emas-klasik);
             padding: 70px 30px;
         }
 
-        /* Responsif HP */
         @media (max-width: 600px) {
             .timeline::after { left: 20px; }
             .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; text-align: left !important; }
             .timeline-item.right { left: 0; }
             .timeline-item::after { left: 6px !important; }
-            .mempelai-title { font-size: 2.2rem; }
+            .mempelai-title { font-size: 2.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- SAMPUL UNDANGAN (COVER OVERLAY) -->
+    <!-- SAMPUL UNDANGAN (COVER) -->
     <div id="cover-screen">
-        <div class="gebyok-frame">
-            <p style="letter-spacing: 3px; font-size: 0.8rem; color: var(--cokelat-jati); font-weight: 600;">UNDANGAN PERNIKAHAN ADAT JAWA</p>
+        <div class="javanese-frame">
+            <p style="letter-spacing: 3px; font-size: 0.75rem; color: var(--cokelat-jati); font-weight: 600;">PAHARGIAN DHAUP AGENG</p>
             <div class="ornament-divider" style="margin: 15px auto;">❖ ✦ ❖</div>
-            <p class="script-font" style="font-size: 1.8rem; color: var(--emas-klasik);">Pangestu Katresnan</p>
+            <p class="script-font" style="font-size: 1.9rem; color: #8C6239;">Undangan Pernikahan</p>
             <h1 class="mempelai-title">Agung &amp; Ajeng</h1>
-            <p style="font-size: 0.88rem; font-style: italic; color: var(--cokelat-jati); margin-bottom: 15px;">“Janji Suci dalam Luhurnya Budaya Jawa”</p>
+            <p style="font-size: 0.85rem; font-style: italic; color: var(--cokelat-jati); margin-bottom: 15px;">“Luhuring Budaya &amp; Suci Ing Katresnan”</p>
             
             <div style="border-top: 1px dashed var(--emas-klasik); margin: 20px 0; padding-top: 15px;">
                 <p style="font-size: 0.85rem; color: #555;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <h3 style="color: var(--cokelat-jati); font-size: 1.3rem; margin-top: 5px;" id="guest-name">Tamu Undangan</h3>
+                <h3 style="color: var(--cokelat-jati); font-size: 1.25rem; margin-top: 5px;" id="guest-name">Tamu Undangan</h3>
             </div>
             
             <button class="btn-buka" onclick="bukaUndangan()">
@@ -407,20 +407,20 @@
         </div>
     </div>
 
-    <!-- FLOATING MUSIC PLAYER (GENDING KEBO GIRO) -->
+    <!-- MUSIC PLAYER -->
     <div class="music-player" id="music-control" onclick="toggleMusic()">
         <span id="music-icon" style="font-size: 1.2rem;">🎵</span>
         <span id="music-text">Gending Kebo Giro</span>
     </div>
 
-    <!-- CONTAINER UTAMA WEBSITE -->
+    <!-- CONTAINER UTAMA -->
     <div class="container">
 
-        <!-- KEPALA & FOTO UTAMA PASANGAN -->
+        <!-- KEPALA & FOTO UTAMA -->
         <section style="background-color: var(--krem-gading);">
             <p style="letter-spacing: 4px; font-size: 0.75rem; color: var(--cokelat-jati); font-weight: 600;">PAHARGIAN DHAUP AGENG</p>
             <h1 class="script-font" style="font-size: 3.2rem; color: var(--cokelat-jati); margin: 5px 0;">Agung Sutrisno &amp; Ajeng Zakia</h1>
-            <p style="color: var(--emas-klasik); font-weight: 600; letter-spacing: 1px; font-size: 0.9rem;">RABU &amp; MINGGU, 7 &amp; 11 JULI 2027</p>
+            <p style="color: #9A7B38; font-weight: 600; letter-spacing: 1px; font-size: 0.9rem;">RABU &amp; MINGGU, 7 &amp; 11 JULI 2027</p>
             
             <div class="profile-img-frame" style="margin-top: 30px;">
                 <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80" alt="Pengantin Adat Jawa">
@@ -432,9 +432,9 @@
             </p>
         </section>
 
-        <!-- PEMBUKAAN & DOA -->
+        <!-- PEMBUKAAN -->
         <section style="background-color: var(--putih-melati);">
-            <p class="script-font" style="font-size: 2.2rem; color: var(--emas-klasik);">Atur Pambagya Raharja</p>
+            <p class="script-font" style="font-size: 2.2rem; color: #9A7B38;">Atur Pambagya Raharja</p>
             <div class="ornament-divider">⚜ ✦ ⚜</div>
             <p style="max-width: 580px; margin: 0 auto; font-size: 0.95rem; color: #443329;">
                 Assalamu’alaikum Warahmatullahi Wabarakatuh.<br><br>
@@ -444,7 +444,7 @@
 
         <!-- PROFIL MEMPELAI -->
         <section style="background-color: var(--krem-gading);">
-            <div class="gebyok-card-box">
+            <div class="javanese-card">
                 <div class="profile-img-frame" style="width: 170px; height: 220px;">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Mempelai Pria">
                 </div>
@@ -452,9 +452,9 @@
                 <p style="font-size: 0.88rem; margin-top: 8px; color: #555;">Putra dari<br><strong>Bapak [Nama Orang Tua] &amp; Ibu [Nama Orang Tua]</strong></p>
             </div>
 
-            <div class="script-font" style="font-size: 3rem; color: var(--emas-klasik); margin: 10px 0;">Katresnan Sejati</div>
+            <div class="script-font" style="font-size: 3rem; color: #9A7B38; margin: 10px 0;">Katresnan Sejati</div>
 
-            <div class="gebyok-card-box">
+            <div class="javanese-card">
                 <div class="profile-img-frame" style="width: 170px; height: 220px;">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Mempelai Wanita">
                 </div>
@@ -463,10 +463,10 @@
             </div>
         </section>
 
-        <!-- KISAH PERJALANAN CINTA -->
+        <!-- TIMELINE -->
         <section style="background-color: var(--putih-melati);">
             <h2 style="color: var(--cokelat-jati); font-size: 2.3rem;">Lampahing Katresnan</h2>
-            <p style="font-size: 0.85rem; color: var(--emas-klasik); letter-spacing: 2px;">PERJALANAN CINTA KAMI</p>
+            <p style="font-size: 0.85rem; color: #9A7B38; letter-spacing: 2px;">PERJALANAN CINTA KAMI</p>
             <div class="ornament-divider">❖</div>
             
             <div class="timeline">
@@ -485,16 +485,16 @@
             </div>
         </section>
 
-        <!-- DETAIL ACARA (IJAB QOBUL & RESEPSI) -->
+        <!-- DETAIL ACARA -->
         <section style="background-color: var(--krem-gading);">
             <h2 style="color: var(--cokelat-jati); font-size: 2.3rem;">Wedal &amp; Papan Adicara</h2>
-            <p style="font-size: 0.85rem; color: var(--emas-klasik); letter-spacing: 2px;">RANGKAIAN ACARA PERNIKAHAN</p>
+            <p style="font-size: 0.85rem; color: #9A7B38; letter-spacing: 2px;">RANGKAIAN ACARA PERNIKAHAN</p>
             <div class="ornament-divider">⚜ ✦ ⚜</div>
 
             <!-- IJAB QOBUL -->
-            <div class="gebyok-card-box">
+            <div class="javanese-card">
                 <h3 style="color: var(--cokelat-jati); font-size: 1.8rem;">IJAB QOBUL (AKAD NIKAH)</h3>
-                <p style="color: var(--emas-klasik); font-weight: 600; margin-top: 5px;">Rabu, 07 Juli 2027</p>
+                <p style="color: #9A7B38; font-weight: 600; margin-top: 5px;">Rabu, 07 Juli 2027</p>
                 <p style="font-size: 0.9rem; margin-top: 5px;">Pukul 08.00 WIB - Selesai</p>
                 <div style="border-top: 1px solid #ddd; margin: 15px auto; width: 80%;"></div>
                 <p style="font-size: 0.9rem;"><strong>[Alamat Lokasi Ijab Qobul]</strong><br>[Kota / Kabupaten]</p>
@@ -502,16 +502,16 @@
             </div>
 
             <!-- RESEPSI -->
-            <div class="gebyok-card-box">
+            <div class="javanese-card">
                 <h3 style="color: var(--cokelat-jati); font-size: 1.8rem;">RESEPSI PERNIKAHAN</h3>
-                <p style="color: var(--emas-klasik); font-weight: 600; margin-top: 5px;">Minggu, 11 Juli 2027</p>
+                <p style="color: #9A7B38; font-weight: 600; margin-top: 5px;">Minggu, 11 Juli 2027</p>
                 <p style="font-size: 0.9rem; margin-top: 5px;">Pukul 11.00 WIB - Selesai</p>
                 <div style="border-top: 1px solid #ddd; margin: 15px auto; width: 80%;"></div>
                 <p style="font-size: 0.9rem;"><strong>[Alamat Lokasi Resepsi]</strong><br>[Kota / Kabupaten]</p>
                 <a href="https://maps.google.com" target="_blank" class="btn-gold">📍 Buka Google Maps</a>
             </div>
 
-            <!-- HITUNG MUNDUR KE IJAB QOBUL -->
+            <!-- HITUNG MUNDUR -->
             <div style="margin-top: 40px;">
                 <h3 style="color: var(--cokelat-jati); font-size: 1.8rem;">Tumuju Wanci Bagya (Ijab Qobul)</h3>
                 <div class="countdown-container">
@@ -523,10 +523,10 @@
             </div>
         </section>
 
-        <!-- GALERI FOTO -->
+        <!-- GALERI -->
         <section style="background-color: var(--putih-melati);">
             <h2 style="color: var(--cokelat-jati); font-size: 2.3rem;">Lampiran Raras</h2>
-            <p style="font-size: 0.85rem; color: var(--emas-klasik); letter-spacing: 2px;">GALERI MOMEN BAHAGIA</p>
+            <p style="font-size: 0.85rem; color: #9A7B38; letter-spacing: 2px;">GALERI MOMEN BAHAGIA</p>
             <div class="ornament-divider">❖</div>
             
             <div class="gallery-grid">
@@ -544,9 +544,9 @@
                 Doa restu Bapak/Ibu sekalian merupakan anugerah terindah bagi kami. Namun jika hendak memberikan tanda kasih, dapat melalui:
             </p>
 
-            <div class="gebyok-card-box" style="max-width: 400px; margin: 0 auto; border-style: dashed;">
+            <div class="javanese-card" style="max-width: 400px; margin: 0 auto; border-style: dashed;">
                 <p style="font-weight: 700; color: var(--cokelat-jati); letter-spacing: 1px;">BANK BCA</p>
-                <p style="font-size: 1.3rem; font-weight: 700; color: var(--emas-klasik); margin: 8px 0;" id="rekening">1234 5678 90</p>
+                <p style="font-size: 1.3rem; font-weight: 700; color: #9A7B38; margin: 8px 0;" id="rekening">1234 5678 90</p>
                 <p style="font-size: 0.88rem; color: #555;">a.n. Agung Sutrisno</p>
                 <button onclick="copyRekening()" class="btn-gold" style="padding: 6px 18px; font-size: 0.8rem; margin-top: 12px;">📋 Salin No. Rekening</button>
             </div>
@@ -555,7 +555,7 @@
         <!-- RSVP & BUKU TAMU -->
         <section style="background-color: var(--putih-melati);">
             <h2 style="color: var(--cokelat-jati); font-size: 2.3rem;">Buku Tamu &amp; Sesanti</h2>
-            <p style="font-size: 0.85rem; color: var(--emas-klasik); letter-spacing: 2px;">KONFIRMASI KEHADIRAN &amp; DOA RESTU</p>
+            <p style="font-size: 0.85rem; color: #9A7B38; letter-spacing: 2px;">KONFIRMASI KEHADIRAN &amp; DOA RESTU</p>
             <div class="ornament-divider">⚜ ✦ ⚜</div>
 
             <form id="rsvp-form" onsubmit="submitRSVP(event)" style="max-width: 520px; margin: 0 auto;">
@@ -579,20 +579,20 @@
 
             <div class="wishes-wall" id="wishes-container">
                 <div class="wish-card">
-                    <strong style="color: var(--cokelat-jati);">Keluarga Besar</strong> <small style="color: var(--emas-klasik);">(Hadir)</small>
+                    <strong style="color: var(--cokelat-jati);">Keluarga Besar</strong> <small style="color: #9A7B38;">(Hadir)</small>
                     <p style="font-size: 0.85rem; margin-top: 4px; color: #444;">Mugi-mugi dipun paringi kelancaran ngantos dinten H, dados pasangan ingkang sakinah, mawaddah, warahmah. Aamiin.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PENUTUP -->
+        <!-- FOOTER -->
         <section class="footer-section">
-            <h2 class="script-font" style="font-size: 3rem; color: var(--emas-klasik);">Matur Nuwun</h2>
+            <h2 class="script-font" style="font-size: 3rem; color: #D4AF37;">Matur Nuwun</h2>
             <p style="font-size: 0.9rem; max-width: 500px; margin: 15px auto 30px; color: var(--krem-gading);">
                 Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
             </p>
             <div class="ornament-divider" style="max-width: 100px; margin: 20px auto;">❖</div>
-            <p style="font-size: 0.75rem; letter-spacing: 3px; color: var(--emas-klasik);">KAMI YANG BERBAHAGIA</p>
+            <p style="font-size: 0.75rem; letter-spacing: 3px; color: #D4AF37;">KAMI YANG BERBAHAGIA</p>
             <h1 style="color: var(--putih-melati); font-size: 2.8rem; margin-top: 5px;" class="font-serif">Agung &amp; Ajeng</h1>
         </section>
 
@@ -687,7 +687,7 @@
             const container = document.getElementById('wishes-container');
             const newWish = document.createElement('div');
             newWish.className = 'wish-card';
-            newWish.innerHTML = `<strong style="color: var(--cokelat-jati);">${nama}</strong> <small style="color: var(--emas-klasik);">(${kehadiran})</small><p style="font-size: 0.85rem; margin-top: 4px; color: #444;">${pesan}</p>`;
+            newWish.innerHTML = `<strong style="color: var(--cokelat-jati);">${nama}</strong> <small style="color: #9A7B38;">(${kehadiran})</small><p style="font-size: 0.85rem; margin-top: 4px; color: #444;">${pesan}</p>`;
             
             container.prepend(newWish);
             document.getElementById('rsvp-form').reset();
